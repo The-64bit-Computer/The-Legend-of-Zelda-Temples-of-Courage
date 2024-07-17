@@ -15,9 +15,3 @@ This is a computer science project created by me, Alejandro. I'm developing this
 | Platforms | Modes | Language | System Requirements |
 | --- | --- | --- | --- |
 | PC | Single-Player | Java | N/A |
-
-<br>
-
-## File Information
-### TemplesOfCourage.java
-N/A
