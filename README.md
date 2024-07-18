@@ -12,6 +12,9 @@ This is a computer science project created by me, Alejandro. I'm developing this
 
 
 ## General Information
-| Platforms | Modes | Language | System Requirements |
-| --- | --- | --- | --- |
-| PC | Single-Player | Java | N/A |
+|‎‎ | |
+| --- | --- |
+| Platforms | PC |
+| Modes | Single-Player |
+| Language | Java |
+| System Requirements | N/A |
