@@ -147,14 +147,78 @@ class Menu
             System.out.println("Health: " + Player.get_health());
             System.out.println("Rupees: " + Player.get_rupees());
 
-            System.out.println("Completed Side Quests: " + Player.get_completed_sidequests());
+            System.out.println("\nCompleted Side Quests: " + Player.get_completed_sidequests());
 
 
 
 
 
 
-            // 3.3 - Display completed Dungeons [UNDER CONSTRUCTION]
+            // 3.3 - Display completed Dungeons
+            if(Player.get_completed_underground_dungeon() == true)
+            {
+                System.out.println("\nUNDERGROUND DUNGEON");
+            }
+
+            if(Player.get_completed_castle_dungeon() == true)
+            {
+                System.out.println("CASTLE DUNGEON");
+            }
+
+
+
+            // 3.4 - Display completed Temples
+            if(Player.get_completed_temple_of_time() == true)
+            {
+                System.out.println("TEMPLE OF TIME");
+            }
+
+            if(Player.get_completed_forest_temple() == true)
+            {
+                System.out.println("FOREST TEMPLE");
+            }
+
+            if(Player.get_completed_water_temple() == true)
+            {
+                System.out.println("WATER TEMPLE");
+            }
+
+            if(Player.get_completed_fire_temple() == true)
+            {
+                System.out.println("FIRE TEMPLE");
+            }
+
+            if(Player.get_completed_gerudo_temple() == true)
+            {
+                System.out.println("GERUDO TEMPLE");
+            }
+
+
+
+            // 3.5 - Display the defeated final and secret Bosses
+            if(Player.get_defeated_ganon() == true)
+            {
+                System.out.println("\nGANON");
+            }
+            
+            if(Player.get_defeated_majora() == true)
+            {
+                System.out.println("MAJORA'S MASK");
+            }
+
+
+
+
+
+
+            // 3.6 - Exit Progress Screen
+            System.out.println("\n    1. BACK");
+            String input = StringScanner.nextLine();
+
+            if(input.equals("1"))
+            {
+                break;
+            }
         }
     }
 }
