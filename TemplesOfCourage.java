@@ -27,6 +27,10 @@ class MainGame
     // 1.1 - Make Player a global object
     Hero Player;
 
+
+
+
+
     public void Title_Screen()
     {
         // 2.1 - Create a Hero object
@@ -41,17 +45,16 @@ class MainGame
         System.out.println("2024 The 64-bit Computer\n");
 
 
-        // 2.3 - What is your name?
+        // 2.3 - What is your name? + Create the StringScanner object
         System.out.println("\"Hi! I'm NAVI! What is your name?\"");
 
-        @SuppressWarnings("resource")
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+        Scanner StringScanner = new Scanner(System.in);
+        String input = StringScanner.nextLine();
         Player.set_name(input);
 
 
-        // 2.4 - Create a Menu object + Let Menu receive Player + Call the Menu_Screen() method
-        Menu CurrentMenu = new Menu(Player);
+        // 2.4 - Create a Menu object + Let Menu receive Player and StringScanner + Call the Menu_Screen() method
+        Menu CurrentMenu = new Menu(Player, StringScanner);
         CurrentMenu.Menu_Screen();
     }
 }
@@ -62,13 +65,20 @@ class MainGame
 
 class Menu
 {
-    // 1.1 - Receive Player + Make it a global object
+    // 1.1 - Receive Player and StringScanner + Make them global objects
     Hero Player;
-    public Menu(Hero Player)
+    Scanner StringScanner;
+
+    public Menu(Hero Player, Scanner StringScanner)
     {
         this.Player = Player;
+        this.StringScanner = StringScanner;
     }
     
+
+
+
+
     public void Menu_Screen()
     {
         while(true)
@@ -78,7 +88,7 @@ class Menu
             System.out.flush();
 
 
-            // 2.2 - Display title screen + What would you like to do?
+            // 2.2 - Display title screen + What would you like to do? + Acquire the user input
             System.out.println("=== MENU ===\n");
             System.out.println("\"What would you like to do?\"");
 
@@ -87,18 +97,14 @@ class Menu
             System.out.println("    3. INVENTORY");
             System.out.println("    4. TRAVEL");
 
-
-            // 2.3 - Acquire the user input
-            @SuppressWarnings("resource")
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
+            String input = StringScanner.nextLine();
 
 
 
 
 
 
-            // 2.4 - Call the user-requested method
+            // 2.3 - Call the user-requested method
             if(input.equals("1"))
             {
                 // [UNDER CONSTRUCTION]
