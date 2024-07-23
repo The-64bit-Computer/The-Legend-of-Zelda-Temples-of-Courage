@@ -56,6 +56,19 @@ class MainGame
         // 2.4 - Create a Menu object + Let Menu receive Player and StringScanner + Call the Menu_Screen() method
         Menu CurrentMenu = new Menu(Player, StringScanner);
         CurrentMenu.Menu_Screen();
+
+
+        // 2.5 - Call Tournament_Quest() method
+        Tournament_Quest();
+    }
+
+
+
+
+
+    public void Tournament_Quest()
+    {
+        // [UNDER CONSTRUCTION]
     }
 }
 
@@ -88,14 +101,31 @@ class Menu
             System.out.flush();
 
 
-            // 2.2 - Display title screen + What would you like to do? + Acquire the user input
+            // 2.2 - Display title screen + What would you like to do?
             System.out.println("=== MENU ===\n");
             System.out.println("\"What would you like to do?\"");
 
-            System.out.println("    1. PLAY");
+
+            // 2.3 - Display options and whether or not they should appear + Acquire the user input
+            if(Player.get_began_Game() == true)
+            {
+                System.out.println("    1. CONTINUE");
+            }
+            else
+            {
+                System.out.println("    1. PLAY");
+            }
+
             System.out.println("    2. PROGRESS");
-            System.out.println("    3. INVENTORY");
-            System.out.println("    4. TRAVEL");
+
+            if(Player.get_began_Game() == true)
+            {
+                System.out.println("    3. INVENTORY");
+            }
+            if(Player.get_began_Game() == true)
+            {
+                System.out.println("    4. TRAVEL");
+            }
 
             String input = StringScanner.nextLine();
 
@@ -104,10 +134,14 @@ class Menu
 
 
 
-            // 2.3 - Call the user-requested method
-            if(input.equals("1"))
+            // 2.4 - Call the user-requested method
+            if(input.equals("1") && Player.get_began_Game() == true)
             {
                 // [UNDER CONSTRUCTION]
+            }
+            else if(input.equals("1") && Player.get_began_Game() == false)
+            {
+                break;
             }
 
             else if(input.equals("2"))
@@ -115,14 +149,14 @@ class Menu
                 Progress_Screen();
             }
 
-            else if(input.equals("3"))
+            else if(input.equals("3") && Player.get_began_Game() == true)
             {
-                // [UNDER CONSTRUCTION]
+                Inventory_Screen();
             }
 
-            else if(input.equals("4"))
+            else if(input.equals("4") && Player.get_began_Game() == true)
             {
-                // [UNDER CONSTRUCTION]
+                Travel_Screen();
             }
         }
     }
@@ -219,6 +253,49 @@ class Menu
             {
                 break;
             }
+        }
+    }
+
+
+
+
+
+    public void Inventory_Screen()
+    {
+        while(true)
+        {
+            // 4.1 - Clear Console
+            System.out.println("\033[H\033[2J");
+            System.out.flush();
+
+
+            // 4.2 - Display title screen
+            System.out.println("=== INVENTORY ===");
+
+
+            // [UNDER CONSTRUCTION]
+        }
+    }
+
+
+
+
+
+    public void Travel_Screen()
+    {
+        while(true)
+        {
+            // 5.1 - Clear Console
+            System.out.println("\033[H\033[2J");
+            System.out.flush();
+
+
+            // 5.2 - Display title screen + Where would you like to travel?
+            System.out.println("=== TRAVEL ===");
+            System.out.println("\"Where would you like to travel?\"");
+
+
+            // [UNDER CONSTRUCTION]
         }
     }
 }
